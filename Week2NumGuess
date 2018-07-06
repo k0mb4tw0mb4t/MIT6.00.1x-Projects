@@ -1,0 +1,31 @@
+low = 0    # Must be outside function as these would reset every pass of the loop if they were inside it
+high = 100    
+
+inputRequest = """
+Enter 'h' to indicate the guess is too high. \
+Enter 'l' to indicate the guess is too low. \
+Enter 'c' to indicate I guessed correctly. \
+Enter 'esc' to exit the program at any time.
+"""
+
+
+print("Please think of a number between 0 and 100!")
+
+while True:
+    guess = (high + low) // 2    # Sets guess equal to midpoint between current high and low markers   
+    print("Is your secret number", guess, "?")
+    userInput = input(inputRequest)
+    if userInput == 'h':
+        high = guess    # if guess is too high, this effectively discards values above the guess
+    elif userInput == "l":
+        low = guess    # if guess is too low, this effectively discards values below the guess
+    elif userInput == "c":
+        print("Game over. Your secret number was: ", guess)
+        break
+    elif userInput == "esc":
+        print("You've ended the program.")
+        break
+    else:
+        print("Sorry, I did not understand your input.")
+       
+## Loop will not exit unless you evenutally select 'c'
