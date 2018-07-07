@@ -27,5 +27,4 @@ while True:
         break
     else:
         print("Sorry, I did not understand your input.")
-       
-## Loop will not exit unless you evenutally select 'c'
+
